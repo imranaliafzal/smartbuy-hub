@@ -17,7 +17,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Product'
+                  $ref: '#/components/schemas/ProductDTO'
     put:
       summary: Import a list of products
       operationId: importProducts
@@ -28,7 +28,7 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Product'
+                $ref: '#/components/schemas/ProductDTO'
       responses:
         '200':
           description: Products imported successfully
@@ -50,7 +50,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: '#/components/schemas/ProductDTO'
     put:
       summary: Update a product
       operationId: updateProduct
@@ -66,7 +66,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Product'
+              $ref: '#/components/schemas/ProductDTO'
       responses:
         '200':
           description: Product updated
@@ -101,7 +101,7 @@ paths:
 
 components:
   schemas:
-    Product:
+    ProductDTO:
       type: object
       properties:
         id:
