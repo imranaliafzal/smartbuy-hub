@@ -13,11 +13,12 @@
 	<artifactId>smartbuy-hub</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
 	<modules>
 		<module>smartbuyhub-catalog-api</module>
 		<module>smartbuyhub-catalog-service</module>
+		<module>smartbuyhub-catalog-rest</module>
 		<module>smartbuyhub-data</module>
 		<module>smartbuyhub-domain</module>
+		<module>smartbuyhub-rest</module>
 	</modules>
 </project>
