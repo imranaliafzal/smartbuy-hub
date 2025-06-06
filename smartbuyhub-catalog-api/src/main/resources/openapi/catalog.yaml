@@ -3,7 +3,6 @@ info:
   title: Catalog API
   version: 1.0.0
   description: API for managing product catalog
-
 paths:
   /products:
     get:
@@ -32,18 +31,17 @@ paths:
       responses:
         '200':
           description: Products imported successfully
-
   /products/{id}:
     get:
       summary: Get a product by ID
       operationId: getProductById
       parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: string
-            format: uuid
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
       responses:
         '200':
           description: A product
@@ -55,12 +53,12 @@ paths:
       summary: Update a product
       operationId: updateProduct
       parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: string
-            format: uuid
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
       requestBody:
         required: true
         content:
@@ -74,31 +72,29 @@ paths:
       summary: Delete a product by ID
       operationId: deleteProduct
       parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: string
-            format: uuid
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
       responses:
         '204':
           description: Product deleted
-
   /products/{id}/deactivate:
     post:
       summary: Mark a product inactive by ID
       operationId: deactivateProduct
       parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: string
-            format: uuid
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
       responses:
         '200':
           description: Product marked inactive
-
 components:
   schemas:
     ProductDTO:
@@ -139,10 +135,10 @@ components:
         updatedBy:
           type: string
       required:
-        - id
-        - name
-        - sku
-        - price
-        - isActive
-        - createdAt
-        - updatedAt
+      - id
+      - name
+      - sku
+      - price
+      - isActive
+      - createdAt
+      - updatedAt
