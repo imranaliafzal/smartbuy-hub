@@ -16,7 +16,11 @@ public class CatalogService {
         this.productRepository = productRepository;
     }
 
-    public List<Product> getAllProducts() {
+    public List<Product> getAll() {
         return productRepository.findAll();
+    }
+    
+    public Product add(Product product) {
+    	return productRepository.save(product);
     }
 }

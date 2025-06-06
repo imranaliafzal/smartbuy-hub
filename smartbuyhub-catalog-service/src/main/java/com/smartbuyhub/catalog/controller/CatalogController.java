@@ -26,7 +26,7 @@ public class CatalogController {
 
     @GetMapping
     public ResponseEntity<List<ProductDTO>> getAllProducts() {
-    	List<Product> products = catalogService.getAllProducts();
+    	List<Product> products = catalogService.getAll();
         List<ProductDTO> productDTOs = productMapper.toDTOList(products);
         return ResponseEntity.ok(productDTOs);
     }
@@ -73,5 +73,15 @@ public class CatalogController {
             return ResponseEntity.ok("Product marked as inactive");
         }
         return ResponseEntity.notFound().build();
+    }
+    
+    @PostMapping("/add")
+    public ResponseEntity<ProductDTO> addProduct(@RequestBody ProductDTO product){
+    	product.setUpdatedAt(OffsetDateTime.now());
+    	product.setCreatedAt(OffsetDateTime.now());
+    	product.setCreatedBy("admin");
+    	product.setUpdatedBy("admin");
+    	Product rslt = catalogService.add(productMapper.toEntity(product));
+    	return ResponseEntity.ok(productMapper.toDTO(rslt));
     }
 }
