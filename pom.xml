@@ -20,5 +20,6 @@
 		<module>smartbuyhub-data</module>
 		<module>smartbuyhub-domain</module>
 		<module>smartbuyhub-rest</module>
+		<module>smartbuyhub-auth</module>
 	</modules>
 </project>
