@@ -36,6 +36,7 @@
 		<module>smartbuyhub-catalog-service</module>
 		
 		<!-- REST modules - contain REST endpoints -->
+		<module>smartbuyhub-auth-rest</module>
 		<module>smartbuyhub-catalog-rest</module>
 		<module>smartbuyhub-rest</module>
 	</modules>
