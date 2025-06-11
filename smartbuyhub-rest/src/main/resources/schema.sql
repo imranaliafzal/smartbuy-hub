@@ -1,5 +1,5 @@
 CREATE TABLE product (
-    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    id UUID PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
     sku VARCHAR(100) NOT NULL,
