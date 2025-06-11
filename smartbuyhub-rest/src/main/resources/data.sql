@@ -15,5 +15,5 @@ INSERT INTO product (
  '{"size":"9","color":"White"}', 25, true,
  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'admin', 'admin');
 
-INSERT INTO roles (id, name) VALUES (1, 'ROLE_USER');
-INSERT INTO roles (id, name) VALUES (2, 'ROLE_ADMIN');
+-- INSERT INTO roles (id, name) VALUES (1, 'ROLE_USER');
+-- INSERT INTO roles (id, name) VALUES (2, 'ROLE_ADMIN');

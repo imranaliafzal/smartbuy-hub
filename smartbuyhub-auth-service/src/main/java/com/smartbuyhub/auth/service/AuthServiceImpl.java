@@ -1,9 +1,9 @@
 package com.smartbuyhub.auth.service;
 
-import com.smartbuyhub.auth.api.AuthenticationApi;
-import com.smartbuyhub.auth.api.model.JwtResponse;
-import com.smartbuyhub.auth.api.model.LoginRequest;
-import com.smartbuyhub.auth.api.model.SignupRequest;
+import com.smartbuyhub.auth.api.AuthApi;
+import com.smartbuyhub.auth.model.JwtResponse;
+import com.smartbuyhub.auth.model.LoginRequest;
+import com.smartbuyhub.auth.model.SignupRequest;
 import com.smartbuyhub.auth.service.security.JwtUtils;
 import com.smartbuyhub.auth.service.security.UserDetailsImpl;
 import com.smartbuyhub.data.repository.RoleRepository;
@@ -25,7 +25,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
-public class AuthServiceImpl implements AuthenticationApi {
+public class AuthServiceImpl implements AuthApi {
 
     @Autowired
     AuthenticationManager authenticationManager;

@@ -18,6 +18,10 @@
 		<java.version>17</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<jackson-databind-nullable.version>0.2.4</jackson-databind-nullable.version>
+		<swagger-annotations.version>2.2.20</swagger-annotations.version>
+		<openapi-generator.version>7.13.0</openapi-generator.version>
+		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 	</properties>
 
 	<modules>
@@ -32,11 +36,11 @@
 		<module>smartbuyhub-catalog-api</module>
 		
 		<!-- Service modules - contain business logic -->
-		<module>smartbuyhub-auth-service</module>
+<!--		<module>smartbuyhub-auth-service</module>-->
 		<module>smartbuyhub-catalog-service</module>
 		
 		<!-- REST modules - contain REST endpoints -->
-		<module>smartbuyhub-auth-rest</module>
+<!--		<module>smartbuyhub-auth-rest</module>-->
 		<module>smartbuyhub-catalog-rest</module>
 		<module>smartbuyhub-rest</module>
 	</modules>

@@ -13,7 +13,6 @@ import jakarta.annotation.PostConstruct;
 @SpringBootApplication
 @ComponentScan(basePackages = {
     "com.smartbuyhub.rest",
-    "com.smartbuyhub.auth",
     "com.smartbuyhub.catalog"
 })
 public class SmartbuyhubRestApplication {

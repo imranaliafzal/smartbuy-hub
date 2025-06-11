@@ -9,6 +9,7 @@
 	</parent>
 	<artifactId>smartbuyhub-catalog-service</artifactId>
 	<dependencies>
+		<!-- Internal Dependencies -->
 		<dependency>
 			<groupId>com.smartbuyhub</groupId>
 			<artifactId>smartbuyhub-catalog-api</artifactId>
@@ -27,7 +28,7 @@
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
-			<version>1.5.5.Final</version>
+			<version>${org.mapstruct.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
