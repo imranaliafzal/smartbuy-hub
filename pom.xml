@@ -9,11 +9,19 @@
 		<version>3.2.5</version>
 		<relativePath />
 	</parent>
+	<properties>
+		<jackson-databind-nullable.version>0.2.4</jackson-databind-nullable.version>
+		<swagger-annotations.version>2.2.20</swagger-annotations.version>
+		<openapi-generator-maven-plugin.version>7.13.0</openapi-generator-maven-plugin.version>
+		<mapstruct.version>1.5.5.Final</mapstruct.version>
+	</properties>
 	<groupId>com.smartbuyhub</groupId>
 	<artifactId>smartbuy-hub</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
+		<module>smartbuyhub-security</module>
+		<module>smartbuyhub-user-api</module>
 		<module>smartbuyhub-catalog-api</module>
 		<module>smartbuyhub-catalog-service</module>
 		<module>smartbuyhub-catalog-rest</module>
