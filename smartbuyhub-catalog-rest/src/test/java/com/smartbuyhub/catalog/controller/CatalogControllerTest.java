@@ -54,7 +54,7 @@ class CatalogControllerTest {
                 null,
                 new ParameterizedTypeReference<String>() {}
         );
-        //just a comment to kick off build
+
         assertEquals(HttpStatus.OK, response.getStatusCode());
         String helloString = response.getBody();
 
