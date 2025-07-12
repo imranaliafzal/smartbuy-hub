@@ -4,7 +4,7 @@
       branches:
         - main
       paths:
-        - 'smartbuy-hub/smartbuyhub-catalog-rest/**'
+        - './smartbuyhub-catalog-rest/**'
     workflow_dispatch:
 
   jobs:
@@ -43,8 +43,8 @@
         - name: build the docker image
           uses: docker/build-push-action@v4
           with:
-            context: ./smartbuy-hub/smartbuyhub-catalog-rest
-            dockerfile: ./smartbuy-hub/smartbuyhub-catalog-rest/Dockerfile
+            context: ./smartbuyhub-catalog-rest
+            dockerfile: ./smartbuyhub-catalog-rest/Dockerfile
             push: false
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.0.0
 
