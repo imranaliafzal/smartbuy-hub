@@ -44,7 +44,7 @@
           uses: docker/build-push-action@v4
           with:
             context: ./smartbuyhub-catalog-rest
-            dockerfile: ./smartbuyhub-catalog-rest/Dockerfile
+            dockerfile: Dockerfile
             push: false
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.0.0
 
@@ -54,10 +54,13 @@
             username: ${{ secrets.DOCKER_HUB_USERNAME }}
             password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
+        - name: List Dockerfile location
+          run: ls -l ./smartbuyhub-catalog-rest
+
         - name: push the docker image to docker hub
           uses: docker/build-push-action@v4
           with:
-            context: .
+            context: ./smartbuyhub-catalog-rest
             dockerfile: Dockerfile
             push: true
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.0.0
