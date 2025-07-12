@@ -33,8 +33,7 @@
             login: ${{ secrets.SONARQUBE_TOKEN }}
             projectBaseDir: "src/"
             projectKey: "imranaliafzal_smartbuy-hub"
-          
-         
+
         - name: build the app
           run: |
             mvn clean
