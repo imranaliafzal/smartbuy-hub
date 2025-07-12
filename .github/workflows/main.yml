@@ -65,6 +65,6 @@
 
         - name: Trigger Render deploy
           run: |
-            curl -X POST https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }} \
+            curl -X Get https://api.render.com/deploy/${{ secrets.RENDER_DEPLOY_HOOK}} \
               -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
               -H "Content-Type: application/json"
