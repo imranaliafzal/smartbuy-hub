@@ -44,7 +44,6 @@
           uses: docker/build-push-action@v4
           with:
             context: ./smartbuyhub-catalog-rest
-            file: Dockerfile
             push: false
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.0.0
 
@@ -58,7 +57,6 @@
           uses: docker/build-push-action@v4
           with:
             context: ./smartbuyhub-catalog-rest
-            file: Dockerfile
             push: true
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.0.0
 
