@@ -36,6 +36,10 @@ public class CatalogController {
         ProductDTO product = mockDatabase.get(id);
         return product != null ? ResponseEntity.ok(product) : ResponseEntity.notFound().build();
     }
+    @GetMapping("/hello")
+    public ResponseEntity<String> getHello(){
+        return ResponseEntity.ok("Hello World");
+    }
 
     @PutMapping("/{id}")
     public ResponseEntity<ProductDTO> updateProduct(@PathVariable UUID id, @RequestBody ProductDTO product) {

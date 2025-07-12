@@ -44,7 +44,7 @@ class CatalogControllerTest {
 
         assertNotNull(products);
         assertFalse(products.isEmpty());
-        assertEquals("Red Shirt", products.get(0).getName()); // Example assertion
+        assertEquals("Red Shirt", products.get(0).getName());
     }
 
     @Test
