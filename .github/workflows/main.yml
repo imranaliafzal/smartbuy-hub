@@ -45,7 +45,7 @@
           with:
             context: ./smartbuyhub-catalog-rest
             push: false
-            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.1.0
+            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:latest
 
         - name: login to docker hub
           uses: docker/login-action@v2
@@ -61,4 +61,10 @@
           with:
             context: ./smartbuyhub-catalog-rest
             push: true
-            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.1.0
+            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:latest
+
+        - name: Trigger Render deploy
+          run: |
+            curl -X POST https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }} \
+              -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+              -H "Content-Type: application/json"            
