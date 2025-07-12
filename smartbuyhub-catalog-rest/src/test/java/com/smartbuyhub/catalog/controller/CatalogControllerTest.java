@@ -46,6 +46,21 @@ class CatalogControllerTest {
         assertFalse(products.isEmpty());
         assertEquals("Red Shirt", products.get(0).getName());
     }
+    @Test
+    void getHello(){
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/products/hello",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<String>() {}
+        );
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        String helloString = response.getBody();
+
+        assertNotNull(helloString);
+        assertFalse(helloString.isEmpty());
+    }
 
     @Test
     void getProductById() {
