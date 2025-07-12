@@ -11,9 +11,6 @@
     build-deploy:
       name: build and deploy smartbuyhub-catalog-rest
       runs-on: ubuntu-22.04
-      defaults:
-        run:
-          working-directory: smartbuy-hub/smartbuyhub-catalog-rest
       steps:
         - name: checkout code
           uses: actions/checkout@v3
