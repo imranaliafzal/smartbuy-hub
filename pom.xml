@@ -24,6 +24,7 @@
 		<module>smartbuyhub-user-api</module>
 		<module>smartbuyhub-catalog-api</module>
 		<module>smartbuyhub-catalog-service</module>
+		<module>smartbuyhub-user-service</module>
 		<module>smartbuyhub-catalog-rest</module>
 		<module>smartbuyhub-data</module>
 		<module>smartbuyhub-domain</module>
