@@ -11,6 +11,9 @@
     build-deploy:
       name: build and deploy smartbuyhub-catalog-rest
       runs-on: ubuntu-22.04
+      defaults:
+        run:
+          working-directory: smartbuy-hub/smartbuyhub-catalog-rest
       steps:
         - name: checkout code
           uses: actions/checkout@v3
@@ -43,8 +46,8 @@
         - name: build the docker image
           uses: docker/build-push-action@v4
           with:
-            context: .
-            dockerfile: Dockerfile
+            context: ./smartbuy-hub/smartbuyhub-catalog-rest
+            dockerfile: ./smartbuy-hub/smartbuyhub-catalog-rest/Dockerfile
             push: false
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.0.0
 
