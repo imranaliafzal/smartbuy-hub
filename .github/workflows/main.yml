@@ -5,6 +5,7 @@
         - main
       paths:
         - 'smartbuy-hub/smartbuyhub-catalog-rest/**'
+    workflow_dispatch:
 
   jobs:
     build-deploy:
