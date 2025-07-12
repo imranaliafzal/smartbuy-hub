@@ -65,6 +65,4 @@
 
         - name: Trigger Render deploy
           run: |
-            curl -X Get https://api.render.com/deploy/srv-d1pcsg2dbo4c738avhug?key=OEsKYttUSwk \
-              -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-              -H "Content-Type: application/json"
+            curl -X Get https://api.render.com/deploy/srv-d1pcsg2dbo4c738avhug?key=OEsKYttUSwk
