@@ -45,7 +45,7 @@
           with:
             context: ./smartbuyhub-catalog-rest
             push: false
-            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.0.0
+            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.1.0
 
         - name: login to docker hub
           uses: docker/login-action@v2
@@ -61,12 +61,4 @@
           with:
             context: ./smartbuyhub-catalog-rest
             push: true
-            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.0.0
-
-        - name: Deploy to Render
-          uses: JorgeLNJunior/render-deploy@v1.4.5  # Or another suitable Render deployment action
-          with:
-            service_id: ${{ secrets.RENDER_SERVICE_ID }}
-            api_key: ${{ secrets.RENDER_API_KEY }}
-              # Optional: Add other parameters like clear_cache: true or wait_deploy: true if needed
-
+            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smarthub-catalog-rest:v1.1.0
