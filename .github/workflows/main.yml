@@ -65,4 +65,11 @@
 
         - name: Trigger Render deploy
           run: |
-            curl -X Get https://api.render.com/deploy/srv-d1pcsg2dbo4c738avhug?key=OEsKYttUSwk
+            curl -X POST \
+              https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys \
+              -H "Accept: application/json" \
+              -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY}}" \
+              -H "Content-Type: application/json" \
+              -d '{
+                "clearCache": "clear"
+              }'
