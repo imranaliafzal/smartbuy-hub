@@ -1,0 +1,23 @@
+<configuration>
+    <appender name="ELASTIC" class="com.internetitem.logback.ElasticsearchAppender">
+        <url>${ELASTIC_URL}</url>
+        <index>smartbuy-catalog-logs</index>
+        <type>log</type>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+        <includeCallerData>true</includeCallerData>
+
+        <authentication>
+            <username>${ELASTIC_USER}</username>
+            <password>${ELASTIC_PASSWORD}</password>
+        </authentication>
+
+        <property>
+            <name>app</name>
+            <value>smartbuy-catalog-rest</value>
+        </property>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="ELASTIC"/>
+    </root>
+</configuration>
