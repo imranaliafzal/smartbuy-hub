@@ -1,6 +1,9 @@
 package com.smartbuyhub.catalog.controller;
 
 import com.smartbuyhub.catalog.model.ProductDTO;
+import jakarta.annotation.PostConstruct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.smartbuyhub.catalog.service.CatalogService;
@@ -13,7 +16,7 @@ import java.util.*;
 @RestController
 @RequestMapping("/products")
 public class CatalogController {
-
+    private static final Logger logger = LoggerFactory.getLogger(CatalogController.class);
     private final Map<UUID, ProductDTO> mockDatabase = new HashMap<>();
 
     private final CatalogService catalogService;
@@ -24,10 +27,18 @@ public class CatalogController {
         this.productMapper = productMapper;
     }
 
+    @PostConstruct
+    public void init() {
+        System.out.println("Post Construct Called");
+        logger.info("{\"event\":\"spring-boot-test-log\",\"user\":\"imran\"}");
+    }
+
     @GetMapping
     public ResponseEntity<List<ProductDTO>> getAllProducts() {
+        logger.info("Displaying all Products");
     	List<Product> products = catalogService.getAll();
         List<ProductDTO> productDTOs = productMapper.toDTOList(products);
+        logger.info(String.valueOf(productDTOs));
         return ResponseEntity.ok(productDTOs);
     }
 
@@ -38,7 +49,7 @@ public class CatalogController {
     }
     @GetMapping("/hello")
     public ResponseEntity<String> getHello(){
-        return ResponseEntity.ok("Hello World");
+        return ResponseEntity.ok("Hello Wells Fargo!");
     }
 
     @PutMapping("/{id}")

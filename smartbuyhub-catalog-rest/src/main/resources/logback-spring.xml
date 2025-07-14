@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <Appender name="SPLUNK" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+        <url>https://prd-p-h58c7.splunkcloud.com:8088</url>
+        <token>c928209c-b68b-45a1-ad56-6a1cb6838823</token>
+        <index>main</index>
+        <disableCertificateValidation>true</disableCertificateValidation>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%msg</pattern>
+        </layout>
+    </Appender>
+    <logger name="SPLUNK" level="debug">
+        <appender-ref ref="SPLUNK" />
+    </logger>
+</configuration>
