@@ -22,8 +22,9 @@
             java-version: 17
 
         - name: unit tests
-          run: mvn -B test --file pom.xml
-        
+#          run: mvn -B test --file pom.xml
+          run: mvn clean verify
+
         - name: SonarQube Scan
           uses: kitabisa/sonarqube-action@v1.2.0
           env:
@@ -33,6 +34,9 @@
             login: ${{ secrets.SONARQUBE_TOKEN }}
             projectBaseDir: "src/"
             projectKey: "imranaliafzal_smartbuy-hub"
+            coverage:
+              jacoco:
+                xmlReportPaths: target/site/jacoco/jacoco.xml
 
 
         - name: build the app
