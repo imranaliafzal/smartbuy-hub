@@ -30,6 +30,7 @@
             mvn sonar:sonar \
               -Dsonar.projectKey=imranaliafzal_smartbuy-hub \
               -Dsonar.projectName="SmartBuyHub Catalog REST" \
+              -Dsonar.organization=imranaliafzal \
               -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }} \
               -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }} \
               -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
