@@ -26,18 +26,26 @@
           run: mvn clean verify
 
         - name: SonarQube Scan
-          uses: kitabisa/sonarqube-action@v1.2.0
-          env:
-            SONAR_SCANNER_OPTS: -X
-          with:
-            host: ${{ secrets.SONARQUBE_HOST }}
-            login: ${{ secrets.SONARQUBE_TOKEN }}
-            projectBaseDir: "src/"
-            projectKey: "imranaliafzal_smartbuy-hub"
-            coverage:
-              jacoco:
-                xmlReportPaths: target/site/jacoco/jacoco.xml
+          run: |
+            mvn sonar:sonar \
+              -Dsonar.projectKey=imranaliafzal_smartbuy-hub \
+              -Dsonar.projectName="SmartBuyHub Catalog REST" \
+              -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }} \
+              -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }} \
+              -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
 
+#        - name: SonarQube Scan
+#          uses: kitabisa/sonarqube-action@v1.2.0
+#          env:
+#            SONAR_SCANNER_OPTS: -X
+#          with:
+#            host: ${{ secrets.SONARQUBE_HOST }}
+#            login: ${{ secrets.SONARQUBE_TOKEN }}
+#            projectBaseDir: "src/"
+#            projectKey: "imranaliafzal_smartbuy-hub"
+#            coverage:
+#              jacoco:
+#                xmlReportPaths: target/site/jacoco/jacoco.xml
 
         - name: build the app
           run: |
