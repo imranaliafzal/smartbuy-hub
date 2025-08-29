@@ -1,0 +1,29 @@
+.project
+.classpath
+.settings/
+.apt_generated/
+.factorypath
+.springBeans
+.idea/
+*.iml
+*.iws
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+*.log
+.DS_Store
+Thumbs.db
+/test-output/
+*.class
+.env
+*.local
+.vscode/
+```gitignore
+# Docker
+*.pid
+docker-compose.override.yml
+# Node (for React frontend)
+node_modules/
+build/
+.env.local
+**/target/*
