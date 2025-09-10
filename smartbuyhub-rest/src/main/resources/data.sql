@@ -14,3 +14,6 @@ INSERT INTO product (
 ('33333333-3333-3333-3333-333333333333','Sneakers', 'Running sneakers', 'SKU-SNK-003', 69.99, 'CAT003', 'BrandZ',
  '{"size":"9","color":"White"}', 25, true,
  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'admin', 'admin');
+
+-- INSERT INTO roles (id, name) VALUES (1, 'ROLE_USER');
+-- INSERT INTO roles (id, name) VALUES (2, 'ROLE_ADMIN');

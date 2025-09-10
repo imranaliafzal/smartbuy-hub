@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: chat-service
+
+# Starter defaults (can tune per service)
+acme:
+  http:
+    connect-timeout-ms: 3000
+    response-timeout-ms: 10000
+    max-connections: 200
+
+databricks:
+  base-url: https://your-workspace-endpoint/api/2.0/ai  # example; set your actual base
+  api-key: ${DATABRICKS_API_KEY:}                        # pull from env/secret

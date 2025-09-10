@@ -8,17 +8,18 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import jakarta.annotation.PostConstruct;
 
-//@EnableJpaRepositories(basePackages = "com.smartbuyhub.data")
-//@EntityScan(basePackages = "com.smartbuyhub.domain")
+@EnableJpaRepositories(basePackages = "com.smartbuyhub.data")
+@EntityScan(basePackages = "com.smartbuyhub.domain")
 @SpringBootApplication
-//@ComponentScan(basePackages = {
-//	    "com.smartbuyhub.rest",
-//	    "com.smartbuyhub.catalog"   // 👈 Add this line
-//	})
+@ComponentScan(basePackages = {
+    "com.smartbuyhub.rest",
+    "com.smartbuyhub.catalog"
+})
 public class SmartbuyhubRestApplication {
     public static void main(String[] args) {
         SpringApplication.run(SmartbuyhubRestApplication.class, args);
     }
+    
     @Autowired
     ApplicationContext applicationContext;
 
@@ -26,5 +27,4 @@ public class SmartbuyhubRestApplication {
 	 * @PostConstruct public void printBeans() { for (String name :
 	 * applicationContext.getBeanDefinitionNames()) { System.out.println(name); } }
 	 */
-
 }
